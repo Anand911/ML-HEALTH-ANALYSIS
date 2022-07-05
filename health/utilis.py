@@ -7,7 +7,6 @@ import pickle
 from .models import symptoms as Symptoms
 import numpy as np
 from statistics import mean
-from django.shortcuts import render
 BASE_DIR = Path(__file__).resolve().parent.parent
 df_norm = pd.read_csv(str(BASE_DIR)+'\ml\dataset\dis_sym_dataset_norm.csv', sep=',')
 #test_data = df_norm.drop('prognosis', axis=1)
@@ -18,10 +17,8 @@ with open(str(BASE_DIR)+"\ml\dataset\list_diseaseNames.pkl", "rb") as fp:
 fields = []
 description = {}
 precautionDictionary = {}
-#ml models
 model = pickle.load(open(str(BASE_DIR)+'/ml/symptoms_model(92.31).pkl', 'rb'))
-diabetes_mod=pickle.load(open(str(BASE_DIR)+'/ml/classifier.pkl','rb'))
-sc=pickle.load(open(str(BASE_DIR)+'/ml/sc.pkl','rb'))
+
 with open(str(BASE_DIR)+'/ml/disease_description.csv', encoding="utf8") as csvfile:
     csvreader = csv.reader(csvfile)
     fields = next(csvreader)
@@ -100,15 +97,3 @@ def predict_disease(affected_symps,final_symp):
         Symptoms(symptom_name=str(symptom),symptom_desc="").save()'''
 
 
-
-
-
-def predict_diabetes(request):
-    
-
-    float_features = [float(x) for x in request.form.values()]
-    final_features = [np.array(float_features)]
-    pred = model.predict( sc.transform(final_features) )
-    return render (request,"diabeticform.html", prediction = pred)
-
-    

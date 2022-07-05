@@ -93,11 +93,3 @@ class Mental_health(models.Model):
     suggestion=models.CharField(max_length=12)
     score=models.CharField(max_length=12)
     analyse=models.ForeignKey(Profile,on_delete=models.CASCADE)
-
-
-class predict_diabetes(models.Model):
-    Glucoselevel=models.CharField(max_length=12)
-    Insulin=models.CharField(max_length=12)
-    BMI=models.CharField(max_length=12)
-    DiabetesPF=models.CharField(max_length=12)
-    Age=models.CharField(max_length=12)
