@@ -1,0 +1,18 @@
+{% extends 'navbar.html'%}
+{% load static %}
+
+{%block content%}
+<div>
+        <ul>
+            {%if user.is_authenticated%}
+            <h1>hello world {{name}}</h1>
+            {%else%}
+            <h1>user not logged in</h1>
+            {% endif %}
+            {% for symptom in symptoms %}
+            <li>{{symptom}}</li>
+            {% endfor %}
+        </ul>
+</div>
+{%endblock%}
+<a href="#">hiiiii</a>

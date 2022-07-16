@@ -1,0 +1,44 @@
+{%load static%}
+{%block content%}
+<!DOCTYPE html>
+  <html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Chat-bot |HEALTH ANALYSIS</title>
+    <link rel="stylesheet" href="{%static 'styles/search.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+  </head>
+
+  <body>
+    {%include 'navbar.html'%}
+    <div class="wrapper">
+      <div class="search-input">
+        <input type="text" placeholder="Type to search..">
+        <div class="autocom-box">
+          <li>Itching</li>
+          <li>Skin rash</li>
+          <li>Fever</li>
+        </div>
+        <div class="icon"><i class="fas fa-search"></i></div>
+        
+      </div>
+      <div class="show">
+        <iframe src="" style="border:0px #ffffff none;" name="page"  frameborder="1" marginheight="0px"
+          marginwidth="0px" height="400px" width="800px" allowfullscreen class="frame"></iframe>
+        <a target="page" href=""></a>
+      
+      </div>
+    </div>
+    
+    {%block bot%}
+    {%endblock%}
+    <script src="{%static 'js/suggestions.js'%}"></script>
+    <script src="{%static 'js/search.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+  </body>
+
+</html>
+{%endblock%}
