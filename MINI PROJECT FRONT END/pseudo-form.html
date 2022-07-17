@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <link rel="stylesheet" href="pseudo-form.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title Doctor">
+                Doctor Form
+            </div>
+            <div class="title Patient">
+                Patient Form
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="Doctor" checked>
+                <input type="radio" name="slide" id="Patient">
+                <label for="Doctor" class="slide Doctor">Doctor</label>
+                <label for="Patient" class="slide Patient">Patient</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="#" class="Doctor">
+                    <div class="field">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Doctor_ID" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Phone N.o" required>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" placeholder="Specialistation" required>
+                    </div> 
+                    <div class="field">
+                        <input type="text" placeholder="Works In" required>
+                    </div>
+                    <div class="field">
+                            <input type="radio" placeholder="Sex" required>
+                    
+                    </div>
+                    
+
+                    
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Doctor">
+                    </div>
+                    <div class="Patient-link">
+                        Not a member? <a href="">Patient now</a>
+                    </div>
+                </form>
+                <form action="#" class="Patient">
+                    <div class="field">
+                        <input type="text" placeholder="Fname" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Lname" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Patient_ID" required>
+                    </div>
+                    <div class="field">
+                        <input type="date" placeholder="DOB" required>
+                    </div>
+
+                    <div class="field">
+                        <input type="radio" placeholder="Sex" required>
+                    </div>
+                    <div class="field">
+                        <select id="Blood Group">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+"O+></option>
+                            <option value="O-"O-></option>
+                            <option value="AB+"AB+></option>
+                            <option value="AB-"AB-></option>
+
+                        </select>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Height" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Weight" required>
+                    </div>
+
+                    <div class="field">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="pass-link">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Doctor">
+                    </div>
+                    <div class="Patient-link">
+                        Not a member? <a href="">Patient now</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const DoctorText = document.querySelector(".title-text .Doctor");
+        const DoctorForm = document.querySelector("form.Doctor");
+        const DoctorBtn = document.querySelector("label.Doctor");
+        const PatientBtn = document.querySelector("label.Patient");
+        const PatientLink = document.querySelector("form .Patient-link a");
+        PatientBtn.onclick = (() => {
+            DoctorForm.style.marginLeft = "-50%";
+            DoctorText.style.marginLeft = "-50%";
+        });
+        DoctorBtn.onclick = (() => {
+            DoctorForm.style.marginLeft = "0%";
+            DoctorText.style.marginLeft = "0%";
+        });
+        PatientLink.onclick = (() => {
+            PatientBtn.click();
+            return false;
+        });
+    </script>
+</body>
+
+</html>
